@@ -1,0 +1,78 @@
+Certainly! Below is a simple HTML code for a love calculator with options:
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #calculator {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="calculator">
+        <h2>Love Calculator</h2>
+        <label for="yourName">Your Name:</label>
+        <input type="text" id="yourName" placeholder="Your Name" required>
+
+        <label for="partnerName">Partner's Name:</label>
+        <input type="text" id="partnerName" placeholder="Partner's Name" required>
+
+        <button onclick="calculateLove()">Calculate Love</button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculateLove() {
+            var yourName = document.getElementById('yourName').value.trim();
+            var partnerName = document.getElementById('partnerName').value.trim();
+
+            if (yourName === '' || partnerName === '') {
+                alert('Please enter both names.');
+                return;
+            }
+
+            // Calculate a randomly percentage for demonstration purposes
+            var lovePercentage = Math.floor(Math.random() * 101);
+
+            var resultText;
+            if (lovePercentage === 100) {
+                resultText = `Congratulations, ${yourName} and ${partnerName}! Your love is 100% successful. Perfect match!`;
+            } else if (lovePercentage >= 95) {
+                resultText = `Wow, ${yourName} and ${partnerName}! You have a great combination. Love percentage: ${lovePercentage}%`;
+            } else {
+                resultText = `${yourName} and ${partnerName}, your love percentage is ${lovePercentage}%. Keep working on your relationship!`;
+            }
+
+            document.getElementById('result').innerHTML = resultText;
+        }
+    </script>
+
+</body>
+</html>
+
+
+This is a basic example, and the love percentage is generated randomly for demonstration purposes. You can replace the random calculation with your own algorithm or API for a more realistic result.
